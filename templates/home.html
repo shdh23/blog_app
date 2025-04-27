@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Blog</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; }
+        h1 { text-align: center; }
+        .top-bar { text-align: right; margin-bottom: 20px; }
+        .article-list { list-style-type: none; padding: 0; }
+        .article-item { margin-bottom: 20px; }
+        .article-item a { font-size: 1.2em; color: #0077cc; text-decoration: none; }
+        .date { color: #777; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="{{ url_for('login') }}">Admin</a>
+    </div>
+
+    <h1>My Personal Blog</h1>
+
+    <ul class="article-list">
+        {% for article in articles %}
+        <li class="article-item">
+            <a href="{{ url_for('article', filename=article.filename) }}">{{ article.title }}</a><br>
+            <span class="date">Published on {{ article.date }}</span>
+        </li>
+        {% else %}
+        <p>No articles published yet.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html> 
