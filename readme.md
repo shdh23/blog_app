@@ -39,3 +39,5 @@ blog_app/
 4. Fill in the title and content → Save
 
 Each article is saved as a .json file inside the articles/ folder automatically.
+
+Project idea: https://roadmap.sh/projects/personal-blog 
